@@ -1,15 +1,22 @@
+* {
+    font-family: outfit, Arial, Helvetica;
+}
+
 body {
     background-color: black;
-    height: 200vh;
 }
 
 main {
 
 }
 
+section {
+    height: 100vh;
+}
+
 nav {
     background-color: #1A1717;
-    border-radius: 50px;
+    border-radius: 4em;
     border: 2px solid #F1E800;
     padding: 1rem;
     box-sizing: border-box;
@@ -43,5 +50,70 @@ nav .nav-team {
 }
 
 nav .nav-arrow {
+    transform: rotate(180deg);
+}
 
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .footer-main {
+display: flex;
+justify-content: space-between;
+width: 80%;
+}
+
+footer .footer-main .footer-logo {
+    height: 5em;
+    margin-left: 5%;
+}
+
+footer .footer-main aside {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer .footer-main aside a {
+    color: #F1E800;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+footer hr {
+    width: 85%;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #F1E800;
+    margin: 5em 0;
+    padding: 0;
+}
+
+footer .socials-container {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .socials-container .socials {
+    background-color: #1A1717;
+    border-radius: 4em;
+    border: 2px solid #F1E800;
+    height: 6em;
+    width: 6em;
+}
+
+footer p {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 200;
+    margin: 4em 0 2em;
 }
