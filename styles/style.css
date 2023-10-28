@@ -79,11 +79,11 @@ footer {
 footer .footer-main {
 display: flex;
 justify-content: space-between;
-width: 80%;
+width: 70%;
 }
 
 footer .footer-main .footer-logo {
-    height: 5em;
+    height: 3.5em;
     margin-left: 5%;
 }
 
@@ -98,17 +98,17 @@ footer .footer-main aside {
 footer .footer-main aside a {
     color: #F1E800;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 500;
 }
 
 footer hr {
-    width: 85%;
+    width: 80%;
     display: block;
     height: 1px;
     border: 0;
     border-top: 1px solid #F1E800;
-    margin: 5em 0;
+    margin: 4em 0;
     padding: 0;
 }
 
@@ -122,13 +122,13 @@ footer .socials-container .socials {
     background-color: #1A1717;
     border-radius: 4em;
     border: 2px solid #F1E800;
-    height: 6em;
-    width: 6em;
+    height: 5em;
+    width: 5em;
 }
 
 footer p {
     color: #fff;
     font-size: 1.5em;
     font-weight: 200;
-    margin: 4em 0 2em;
+    margin: 3em 0 2em;
 }
