@@ -2,6 +2,20 @@
     font-family: outfit, Arial, Helvetica;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: blanka;
+    color: #fff;
+    margin: 0;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 6rem;
+}
+
 body {
 	background: linear-gradient(-45deg, #000, #191800, #000, #191800);
 	background-size: 400% 400%;
@@ -22,16 +36,19 @@ body {
 }
 
 main {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section {
     height: 100vh;
+    width: 80%;
 }
 
 nav {
     background-color: #1A1717;
-    border-radius: 4em;
+    border-radius: 4rem;
     border: 2px solid #F1E800;
     padding: 1rem;
     box-sizing: border-box;
@@ -45,7 +62,7 @@ nav {
 }
 
 nav .nav-item {
-    height: 2.5em;
+    height: 2.5rem;
 }
 
 nav .nav-tickets {
@@ -70,6 +87,67 @@ nav .nav-arrow {
 
 
 
+section.team {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(2, 200px);
+    gap: 3rem; 
+    grid-template-areas: 
+    "header  member-1 member-2"
+    "member-3 member-4 member-5"; 
+}
+
+section.team header {
+    grid-area: header;
+}
+
+section.team .member-1 {
+    grid-area: member-1;
+}
+
+section.team .member-2 {
+    grid-area: member-2;
+}
+
+section.team .member-3 {
+    grid-area: member-3;
+}
+
+section.team .member-4 {
+    grid-area: member-4;
+}
+
+section.team .member-5 {
+    grid-area: member-5;
+}
+
+
+
+section.team header h2 {
+    font-size: 5em;
+    margin-top: -1rem;
+}
+
+section.team header img {
+    width: 18rem;
+    position: relative;
+    left: 3rem;
+    bottom: 2rem;
+    z-index: -1;
+}
+
+section.team .member {
+    background-color: #1A1717;
+    border: 2px solid #F1E800;
+}
+
+
+
+
+
+
+
+
 footer {
     display: flex;
     flex-direction: column;
@@ -83,7 +161,7 @@ width: 70%;
 }
 
 footer .footer-main .footer-logo {
-    height: 3.5em;
+    height: 3.5rem;
     margin-left: 5%;
 }
 
@@ -98,7 +176,7 @@ footer .footer-main aside {
 footer .footer-main aside a {
     color: #F1E800;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -108,7 +186,7 @@ footer hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #F1E800;
-    margin: 4em 0;
+    margin: 4rem 0;
     padding: 0;
 }
 
@@ -120,15 +198,15 @@ footer .socials-container {
 
 footer .socials-container .socials {
     background-color: #1A1717;
-    border-radius: 4em;
+    border-radius: 4rem;
     border: 2px solid #F1E800;
-    height: 5em;
-    width: 5em;
+    height: 5rem;
+    width: 5rem;
 }
 
 footer p {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: 200;
-    margin: 3em 0 2em;
+    margin: 3rem 0 2rem;
 }
