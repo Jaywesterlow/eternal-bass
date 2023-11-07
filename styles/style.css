@@ -1,11 +1,13 @@
 * {
     font-family: outfit, Arial, Helvetica;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: blanka;
     color: #fff;
-    margin: 0;
 }
 
 h1 {
@@ -136,11 +138,48 @@ section.team header img {
     z-index: -1;
 }
 
+section.team header p {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 100;
+    letter-spacing: .5rem;
+    text-align: center;
+}
+
 section.team .member {
     background-color: #1A1717;
     border: 2px solid #F1E800;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
 }
 
+section.team .member aside p {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: .5rem;
+}
+
+section.team .member aside div {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 0 -5px;
+}
+
+section.team .member aside div i {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+section.team .member aside div a {
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+}
 
 
 
@@ -187,7 +226,6 @@ footer hr {
     border: 0;
     border-top: 1px solid #F1E800;
     margin: 4rem 0;
-    padding: 0;
 }
 
 footer .socials-container {
