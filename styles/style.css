@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     font-family: outfit, Arial, Helvetica;
     box-sizing: border-box;
@@ -43,9 +47,16 @@ main {
     align-items: center;
 }
 
+main img.return-top {
+    position: fixed;
+    align-self: end;
+    margin: 2rem 1rem 0 0;
+}
+
 section {
     height: 100vh;
     width: 80%;
+    padding-top: 250px;
 }
 
 nav {
@@ -63,35 +74,41 @@ nav {
     margin-top: 2rem;
 }
 
-nav .nav-item {
+nav a {
+    transition: color 0.3s ease;
+}
+
+nav a .nav-item {
     height: 2.5rem;
 }
 
-nav .nav-tickets {
+nav a .nav-tickets {
 
 }
 
-nav .nav-shirt {
+nav a .nav-shirt {
 
 }
 
-nav .nav-logo {
+nav a .nav-logo {
 
 }
 
-nav .nav-team {
+nav a .nav-team {
 
 }
 
-nav .nav-arrow {
-    transform: rotate(180deg);
+
+main section#shirts {
+    
 }
 
 
 
-section.team {
+
+main section#team {
     display: grid;
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: repeat(3, 3fr);
     grid-template-rows: repeat(2, 200px);
     gap: 3rem; 
     grid-template-areas: 
@@ -99,38 +116,38 @@ section.team {
     "member-3 member-4 member-5"; 
 }
 
-section.team header {
+main section#team header {
     grid-area: header;
 }
 
-section.team .member-1 {
+main section#team .member-1 {
     grid-area: member-1;
 }
 
-section.team .member-2 {
+main section#team .member-2 {
     grid-area: member-2;
 }
 
-section.team .member-3 {
+main section#team .member-3 {
     grid-area: member-3;
 }
 
-section.team .member-4 {
+main section#team .member-4 {
     grid-area: member-4;
 }
 
-section.team .member-5 {
+main section#team .member-5 {
     grid-area: member-5;
 }
 
 
 
-section.team header h2 {
+main section#team header h2 {
     font-size: 5em;
     margin-top: -1rem;
 }
 
-section.team header img {
+main section#team header img {
     width: 18rem;
     position: relative;
     left: 3rem;
@@ -138,7 +155,7 @@ section.team header img {
     z-index: -1;
 }
 
-section.team header p {
+main section#team header p {
     color: #fff;
     font-size: 1.5rem;
     font-weight: 100;
@@ -146,34 +163,41 @@ section.team header p {
     text-align: center;
 }
 
-section.team .member {
+main section#team .member {
     background-color: #1A1717;
     border: 2px solid #F1E800;
-    padding: 2.5rem;
+    padding: 2rem;
     display: flex;
     align-items: center;
 }
 
-section.team .member aside p {
+main section#team .member img {
+    height: 100%;
+    margin-right: 1rem;
+    border-radius: 1rem;
+}
+
+
+main section#team .member aside p {
     color: #fff;
     font-size: 1rem;
     font-weight: 100;
     letter-spacing: .5rem;
 }
 
-section.team .member aside div {
+main section#team .member aside div {
     display: flex;
     align-items: center;
     margin: 1rem 0 0 -5px;
 }
 
-section.team .member aside div i {
+main section#team .member aside div i {
     font-size: 2rem;
     color: #fff;
     font-weight: 500;
 }
 
-section.team .member aside div a {
+main section#team .member aside div a {
     font-size: 1rem;
     cursor: pointer;
     color: #fff;
