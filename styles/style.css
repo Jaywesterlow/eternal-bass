@@ -1,85 +1,90 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 * {
-    font-family: outfit, Arial, Helvetica;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  font-family: outfit, Arial, Helvetica;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: blanka;
-    color: #fff;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: blanka;
+  color: #fff;
 }
 
 h1 {
-    font-size: 6rem;
+  font-size: 6rem;
 }
 
 h2 {
-    font-size: 6rem;
+  font-size: 6rem;
 }
 
 body {
-	background: linear-gradient(-45deg, #000, #191800, #000, #191800);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 100vh;
+  background: linear-gradient(-45deg, #000, #191800, #000, #191800);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 main img.return-top {
-    position: fixed;
-    align-self: end;
-    margin: 2rem 1rem 0 0;
+  position: fixed;
+  align-self: end;
+  margin: 2rem 1rem 0 0;
 }
 
 section {
-    height: 100vh;
-    width: 80%;
-    padding-top: 250px;
+  height: 100vh;
+  width: 80%;
+  padding-top: 250px;
 }
 
 nav {
-    background-color: #1A1717;
-    border-radius: 4rem;
-    border: 2px solid #F1E800;
-    padding: 1rem;
-    box-sizing: border-box;
-    width: 40%;
-    display: flex;
-    justify-content: space-around;
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, 0);
-    margin-top: 2rem;
+  background-color: #1a1717;
+  border-radius: 4rem;
+  border: 2px solid #f1e800;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 2rem;
 }
 
 nav a {
-    transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 nav a .nav-item {
-    height: 2.5rem;
+  height: 2.5rem;
 }
 
 nav a .nav-tickets {
@@ -100,54 +105,15 @@ nav a .nav-team {
 
 
 main section#shirts {
-    
+
 }
 
-
-
-
-main section#team {
-    display: grid;
-    grid-template-columns: repeat(3, 3fr);
-    grid-template-rows: repeat(2, 200px);
-    gap: 3rem; 
-    grid-template-areas: 
-    "header  member-1 member-2"
-    "member-3 member-4 member-5"; 
-}
-
-main section#team header {
-    grid-area: header;
-}
-
-main section#team .member-1 {
-    grid-area: member-1;
-}
-
-main section#team .member-2 {
-    grid-area: member-2;
-}
-
-main section#team .member-3 {
-    grid-area: member-3;
-}
-
-main section#team .member-4 {
-    grid-area: member-4;
-}
-
-main section#team .member-5 {
-    grid-area: member-5;
-}
-
-
-
-main section#team header h2 {
+main section#shirts header h2 {
     font-size: 5em;
     margin-top: -1rem;
-}
-
-main section#team header img {
+  }
+  
+main section#shirts header img {
     width: 18rem;
     position: relative;
     left: 3rem;
@@ -155,120 +121,221 @@ main section#team header img {
     z-index: -1;
 }
 
+@keyframes carousel {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  
+  70% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translatey(200px);
+  }
+
+
+}
+
+main section#shirts > img {
+    /* position: absolute; */
+    animation: carousel 5s ease infinite;
+}
+
+main section#shirts > img:nth-child(2) {
+    border: 3px solid rgb(255, 255, 255);
+    animation-delay: 0;
+}
+main section#shirts > img:nth-child(3) {
+    border: 3px solid rgb(219, 219, 255);
+    animation-delay: 4s;
+}
+main section#shirts > img:nth-child(4) {
+    border: 3px solid rgb(138, 138, 255);
+    animation-delay: 8s;
+}
+main section#shirts > img:nth-child(5) {
+    border: 3px solid rgb(98, 98, 248);
+    animation-delay: 12s;
+}
+main section#shirts > img:nth-child(6) {
+    border: 3px solid rgb(78, 78, 252);
+    animation-delay: 16s;
+}
+main section#shirts > img:nth-child(7) {
+    border: 3px solid rgb(42, 42, 255);
+    animation-delay: 20s;
+}
+main section#shirts > img:nth-child(8) {
+    border: 3px solid rgb(0, 0, 255);
+    animation-delay: 24s;
+}
+
+
+
+main section#team {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 3rem;
+  grid-template-areas:
+    "header  member-1 member-2"
+    "member-3 member-4 member-5";
+}
+
+main section#team header {
+  grid-area: header;
+}
+
+main section#team .member-1 {
+  grid-area: member-1;
+}
+
+main section#team .member-2 {
+  grid-area: member-2;
+}
+
+main section#team .member-3 {
+  grid-area: member-3;
+}
+
+main section#team .member-4 {
+  grid-area: member-4;
+}
+
+main section#team .member-5 {
+  grid-area: member-5;
+}
+
+main section#team header h2 {
+  font-size: 5em;
+  margin-top: -1rem;
+}
+
+main section#team header img {
+  width: 18rem;
+  position: relative;
+  left: 3rem;
+  bottom: 2rem;
+  z-index: -1;
+}
+
 main section#team header p {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 100;
-    letter-spacing: .5rem;
-    text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 100;
+  letter-spacing: 0.5rem;
+  text-align: center;
 }
 
 main section#team .member {
-    background-color: #1A1717;
-    border: 2px solid #F1E800;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
+  background-color: #1a1717;
+  border: 2px solid #f1e800;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
 }
 
 main section#team .member img {
-    height: 100%;
-    margin-right: 1rem;
-    border-radius: 1rem;
+  height: 100%;
+  margin-right: 1rem;
+  border-radius: 1rem;
 }
 
-
 main section#team .member aside p {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 100;
-    letter-spacing: .5rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 100;
+  letter-spacing: 0.5rem;
 }
 
 main section#team .member aside div {
-    display: flex;
-    align-items: center;
-    margin: 1rem 0 0 -5px;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0 0 -5px;
 }
 
 main section#team .member aside div i {
-    font-size: 2rem;
-    color: #fff;
-    font-weight: 500;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 500;
 }
 
 main section#team .member aside div a {
-    font-size: 1rem;
-    cursor: pointer;
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
 }
-
-
-
-
-
 
 
 footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer .footer-main {
-display: flex;
-justify-content: space-between;
-width: 70%;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
 }
 
 footer .footer-main .footer-logo {
-    height: 3.5rem;
-    margin-left: 5%;
+  height: 3.5rem;
+  margin-left: 5%;
 }
 
 footer .footer-main aside {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 footer .footer-main aside a {
-    color: #F1E800;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 500;
+  color: #f1e800;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 footer hr {
-    width: 80%;
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #F1E800;
-    margin: 4rem 0;
+  width: 80%;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #f1e800;
+  margin: 4rem 0;
 }
 
 footer .socials-container {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
 }
 
 footer .socials-container .socials {
-    background-color: #1A1717;
-    border-radius: 4rem;
-    border: 2px solid #F1E800;
-    height: 5rem;
-    width: 5rem;
+  background-color: #1a1717;
+  border-radius: 4rem;
+  border: 2px solid #f1e800;
+  height: 5rem;
+  width: 5rem;
 }
 
 footer p {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 200;
-    margin: 3rem 0 2rem;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin: 3rem 0 2rem;
 }
