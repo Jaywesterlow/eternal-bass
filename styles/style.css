@@ -78,6 +78,18 @@ main section {
   padding: 130px 0 250px 0
 }
 
+main section header h2 {
+  margin-top: -1rem;
+}
+
+main section header img {
+  width: 18rem;
+  position: relative;
+  left: 3rem;
+  bottom: 2rem;
+  z-index: -1;
+}
+
 @media only screen and (max-width: 575px) {
   main section {
     width: 100% !important;
@@ -92,19 +104,13 @@ main section {
   main section header {
     padding: 0 5%;
   }
+  main section header img {
+    width: 10rem;
+    bottom: 1rem;
+    left: 4rem;
+  }  
 }
 
-main section header h2 {
-  margin-top: -1rem;
-}
-
-main section header img {
-  width: 18rem;
-  position: relative;
-  left: 3rem;
-  bottom: 2rem;
-  z-index: -1;
-}
 
 nav {
   background-color: var(--backdrop-color);
@@ -121,42 +127,118 @@ nav {
   margin-top: 2rem;
 }
 
-nav a {
-  transition: color 0.3s ease;
+nav div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-nav a .nav-item {
+nav div a img {
   height: 2.5rem;
 }
 
-.nav-tooltip {
 
+nav div span {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  width: 8rem;
+  height: 2.5rem;
+  background-color: var(--backdrop-color);
+  color: var(--text-color);
+  border: 2px solid var(--primary-color);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 10vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav-tooltipline-up-tooltip {
-
+nav div:hover span {
+  opacity: 1;
 }
 
-.nav-tooltip.tickets-tooltip {
-
+nav div span:hover {
+  opacity: 0;
 }
 
-.nav-tooltip.logo-tooltip {
+nav div span::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: calc(50% - 7px);
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent var(--primary-color) transparent;
+}
+ 
+
+/* -- Nav  tablet breakpoint -- */
+@media only screen and (max-width: 1024px) {
+  nav {
+    border-radius: 0;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 0;
+    border-width: 0 0 2px 0;
+  }
   
+  nav div a img {
+    height: 3rem;
+  }
 }
 
-.nav-tooltip.team-tooltip {
+@media only screen and (max-width: 575px) {
+  nav {
+    bottom: 0;
+    border-width: 2px 0 0 0;
+  }
 
+  nav div a img {
+    height: 1.7rem;
+  }
+
+  nav div:nth-child(3) a img {
+    height: 2.5rem;
+  }
+
+  nav div:nth-child(3) {
+    align-self: center;
+  }
+
+  nav div span {
+    font-size: .9rem;
+    font-weight: 200;
+    opacity: 1;
+    width: 6rem;
+    height: 1.5rem;
+    border: 0;
+    position: static;
+  }
+  
+  nav div span::after {
+    content: none;
+  }
 }
 
-.nav-tooltip.top-tooltip {
+@media only screen and (max-width: 475px) {
+  nav div a img {
+    height: 1.7rem;
+  }
 
+  nav div span {
+    font-size: .6rem;
+    font-weight: 200;
+    width: 4rem;
+    height: 1.5rem;
+  }
 }
 
-/* -- Nav  mobile breakpoint -- */
-/* @media only screen and (max-width: 575px) {
-
-} */
 
 main section#line-up {
   display: flex;
@@ -398,13 +480,13 @@ footer hr {
   margin: 4rem 0;
 }
 
-footer .socials-container {
+footer aside {
   width: 50%;
   display: flex;
   justify-content: space-around;
 }
 
-footer .socials-container .socials {
+footer aside .socials {
   background-color: var(--backdrop-color);
   border-radius: 4rem;
   border: 2px solid var(--primary-color);
@@ -422,17 +504,55 @@ footer p {
 /* -- Footer tablet breakpoints -- */
 @media only screen and (max-width: 1024px) {
   section:last-child {
-    padding-bottom: 0px;
+    padding-bottom: 100px;
   }
 
-  footer {
-    margin: 150px 0;
+  footer .footer-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  footer .footer-main .footer-logo {
+    height: auto;
+    width: 40%;
+    margin: 0 0 2rem 0;
+  }
+
+  footer .footer-main aside {
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  footer hr {
+    width: 85%;
+    margin: 4rem 0;
+  }
+
+  footer aside {
+    width: 100%;
+  }
+
+  footer p {
+    font-size: 1rem;
+    margin: 2rem 0 1rem;
   }
 }
 
 /* -- Footer mobile breakpoints -- */
 @media only screen and (max-width: 575px) {
+  section:last-child {
+    padding-bottom: 0px;
+  }
+
   footer {
-    margin: 150px 0;
+    margin: 10rem 0 7rem 0;
+  }
+
+  footer p {
+    font-weight: 100;
+    margin: 2rem 0 0rem;
   }
 }
