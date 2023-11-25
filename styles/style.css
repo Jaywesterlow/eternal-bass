@@ -125,6 +125,7 @@ nav {
   left: 50%;
   transform: translate(-50%, 0);
   margin-top: 2rem;
+  z-index: 2;
 }
 
 nav div {
@@ -176,6 +177,21 @@ nav div span::after {
   border-style: solid;
   border-color: transparent transparent var(--primary-color) transparent;
 }
+
+div.nav-blur {
+  border-radius: 4rem;
+  background-color: rgb(0, 0, 0, 0.9);
+  padding: 1rem;
+  width: 41.5%;
+  height: 6.5rem;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 1.25rem;
+  backdrop-filter: blur(5px);
+  filter: blur(10px);
+  z-index: 1;
+}
  
 
 /* -- Nav  tablet breakpoint -- */
@@ -190,6 +206,10 @@ nav div span::after {
   
   nav div a img {
     height: 3rem;
+  }
+
+  div.nav-blur {
+    display: none;
   }
 }
 
@@ -227,6 +247,10 @@ nav div span::after {
 }
 
 @media only screen and (max-width: 475px) {
+  nav {
+    padding-bottom: .5rem;
+  }
+
   nav div a img {
     height: 1.7rem;
   }
@@ -269,7 +293,6 @@ main section#line-up > img {
 }
 
 
-
 main section#tickets {
 
 }
@@ -280,33 +303,6 @@ main section#team {
   grid-template-columns: repeat(3, 3fr);
   grid-template-rows: repeat(2, 200px);
   gap: 3rem;
-  grid-template-areas:
-    "header  member-1 member-2"
-    "member-3 member-4 member-5";
-}
-
-main section#team header {
-  grid-area: header;
-}
-
-main section#team .member-1 {
-  grid-area: member-1;
-}
-
-main section#team .member-2 {
-  grid-area: member-2;
-}
-
-main section#team .member-3 {
-  grid-area: member-3;
-}
-
-main section#team .member-4 {
-  grid-area: member-4;
-}
-
-main section#team .member-5 {
-  grid-area: member-5;
 }
 
 main section#team header p {
@@ -364,10 +360,6 @@ main section#team .member aside div a {
     grid-template-columns: repeat(2, 3fr);
     grid-template-rows: repeat(3, 200px);
     gap: 2rem;
-    grid-template-areas:
-      "header  member-1"
-      "member-2 member-3"
-      "member-4 member-5";
   }
 }
 
@@ -382,13 +374,6 @@ main section#team .member aside div a {
     width: 60%;
     grid-template-columns: repeat(1, 3fr);
     grid-template-rows: repeat(6, 200px);
-    grid-template-areas:
-      "header"
-      "member-1"
-      "member-2"
-      "member-3"
-      "member-4"
-      "member-5";
   }
 
   main section#team .member img {
@@ -451,9 +436,9 @@ footer .footer-main {
   width: 70%;
 }
 
-footer .footer-main .footer-logo {
-  height: 3.5rem;
-  margin-left: 5%;
+footer .footer-main > img {
+  height: 8.5rem;
+  align-self: center;
 }
 
 footer .footer-main aside {
@@ -461,14 +446,36 @@ footer .footer-main aside {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
+  gap: 2rem;
 }
 
-footer .footer-main aside a {
+footer .footer-main aside div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 100%;
+}
+
+footer .footer-main aside div a {
   color: var(--primary-color);
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+footer .footer-main aside div a i {
+  color: var(--primary-color) !important;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+footer .footer-main aside div p {
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 1rem 0 0 0;
 }
 
 footer hr {
@@ -486,12 +493,28 @@ footer aside {
   justify-content: space-around;
 }
 
-footer aside .socials {
+footer aside div.eternalbass-instagram {
   background-color: var(--backdrop-color);
   border-radius: 4rem;
   border: 2px solid var(--primary-color);
-  height: 5rem;
-  width: 5rem;
+  padding: .5rem 1.5rem;  
+  display: flex;
+  align-items: center;
+}
+
+footer aside div.eternalbass-instagram i {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+  margin-right: .5rem;
+}
+
+footer aside div.eternalbass-instagram a {
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text-color);
+  font-weight: 500;
+  text-decoration: none;
 }
 
 footer p {
@@ -501,10 +524,40 @@ footer p {
   margin: 3rem 0 2rem;
 }
 
+/* -- Footer Desktop breakpoints -- */
+@media only screen and (max-width: 2200px) {
+  footer .footer-main aside {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  footer .footer-main {
+    width: 80%;
+  }
+  
+  footer .footer-main img {
+    height: 6rem;
+  }
+  
+  footer .footer-main aside {
+    width: 70%;
+  }
+
+  footer .footer-main aside div a {
+    font-size: 1rem;
+  }
+  
+  footer .footer-main aside div p {
+    font-size: 1rem;
+  }
+}
+
 /* -- Footer tablet breakpoints -- */
 @media only screen and (max-width: 1024px) {
   section:last-child {
     padding-bottom: 100px;
+    width: 50%;
   }
 
   footer .footer-main {
@@ -512,10 +565,10 @@ footer p {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 85%;
   }
 
-  footer .footer-main .footer-logo {
+  footer .footer-main > img {
     height: auto;
     width: 40%;
     margin: 0 0 2rem 0;
@@ -542,6 +595,17 @@ footer p {
 }
 
 /* -- Footer mobile breakpoints -- */
+@media only screen and (max-width: 675px) {
+  footer .footer-main aside {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .footer-main aside div {
+    align-items: center;
+  }
+}
+
 @media only screen and (max-width: 575px) {
   section:last-child {
     padding-bottom: 0px;
