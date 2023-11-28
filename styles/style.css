@@ -1,72 +1,3 @@
-* {
-  font-family: outfit, Arial, Helvetica;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root{
-  /* ===== Colors ===== */
-  --backdrop-color: #1a1717;
-  --primary-color: #f1e800;
-  --text-color: #fff;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: blanka;
-  color: var(--text-color);
-}
-
-h1 {
-  font-size: 6rem;
-}
-
-h2 {
-  font-size: 6rem;
-  letter-spacing: 6px;
-}
-
-@media only screen and (max-width: 1024px) {
-  h1, h2 {
-    font-size: 4rem;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  h1, h2 {
-    font-size: 3rem;
-  }
-}
-
-body {
-  background: linear-gradient(-45deg, #000, #191800, #000);
-  background-size: 400%;
-  animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -288,61 +219,88 @@ main section#line-up > img#ticket-3 {
   
 }
 
+main section#tickets {
+  position: relative;
+  height: 100vh;
+
+  & .stars-container > img {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  & .stars-container > a {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    color: #fff;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    background-color: var(--backdrop-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 2rem;
+  }
+}
+
 
 main section#team {
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   grid-template-rows: repeat(2, 200px);
   gap: 3rem;
-}
 
-main section#team header p {
-  color: var(--text-color);
-  font-size: 1.5rem;
-  font-weight: 100;
-  letter-spacing: 0.5rem;
-  text-align: center;
-}
+  & header p {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 100;
+    letter-spacing: 0.5rem;
+    text-align: center;
+  }
 
-main section#team .member {
-  background-color: var(--backdrop-color);
-  border: 2px solid var(--primary-color);
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-}
+  & .member {
+    background-color: var(--backdrop-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
 
-main section#team .member img {
-  height: 100%;
-  margin-right: 1rem;
-  border-radius: 1rem;
-}
+    & img {
+      height: 100%;
+      margin-right: 1rem;
+      border-radius: 1rem;
+      
+    }
 
-main section#team .member aside p {
-  color: var(--text-color);
-  font-size: 1rem;
-  font-weight: 100;
-  letter-spacing: 0.5rem;
-}
+    & aside p {
+      color: var(--text-color);
+      font-size: 1rem;
+      font-weight: 100;
+      letter-spacing: 0.5rem;
+    }
 
-main section#team .member aside div {
-  display: flex;
-  align-items: center;
-  margin: 1rem 0 0 -5px;
-}
+    & aside div {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0 0 -5px;
 
-main section#team .member aside div i {
-  font-size: 2rem;
-  color: var(--text-color);
-  font-weight: 500;
-}
+      & i {
+        font-size: 2rem;
+        color: var(--text-color);
+        font-weight: 500;
+      }
 
-main section#team .member aside div a {
-  font-size: 1rem;
-  cursor: pointer;
-  color: var(--text-color);
-  font-weight: 500;
-  text-decoration: none;
+      & a {
+        font-size: 1rem;
+        cursor: pointer;
+        color: var(--text-color);
+        font-weight: 500;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 /* -- Team section tablet breakpoints -- */
@@ -351,6 +309,10 @@ main section#team .member aside div a {
     grid-template-columns: repeat(2, 3fr);
     grid-template-rows: repeat(3, 200px);
     gap: 2rem;
+
+    & .member img {
+      margin: none;
+    }
   }
 }
 
@@ -365,10 +327,10 @@ main section#team .member aside div a {
     width: 60%;
     grid-template-columns: repeat(1, 3fr);
     grid-template-rows: repeat(6, 200px);
-  }
 
-  main section#team .member img {
-    margin: none;
+    & .member img {
+      margin: none;
+    }
   }
 }
 
@@ -388,29 +350,29 @@ main section#team .member aside div a {
 @media only screen and (max-width: 575px) {
   main section#team {
     grid-template-rows: auto;
-  }
 
-  main section#team .member {
-    border-left: none;
-    border-right: none;
-    flex-direction: column;
-    justify-content: center;
-  }
+    & .member {
+      border-left: none;
+      border-right: none;
+      flex-direction: column;
+      justify-content: center;
 
-  main section#team .member img {
-    height: auto;
-    width: 50%;
-    margin: 0 0 1.5rem 0;
-  }
+      & img {
+        height: auto;
+        width: 50%;
+        margin: 0 0 1.5rem 0;
+      }
 
-  main section#team .member aside p {
-    text-align: center;
-    margin: 0 0 1rem 0;
-  }
+      & aside p {
+        text-align: center;
+        margin: 0 0 1rem 0;
+      }
 
-  main section#team .member aside div {
-    justify-content: center;
-    margin: 0;
+      & aside div {
+        justify-content: center;
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -419,100 +381,106 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-footer .footer-main {
-  display: flex;
-  justify-content: space-between;
-  width: 70%;
-}
+  & .footer-main {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
 
-footer .footer-main > img {
-  height: 8.5rem;
-  align-self: center;
-}
+    & > img {
+      height: 8.5rem;
+      align-self: center;
+    }
 
-footer .footer-main aside {
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: start;
-  gap: 2rem;
-}
+    & aside {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: start;
+      gap: 2rem;
 
-footer .footer-main aside div {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  height: 100%;
-}
+      & div {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        height: 100%;
 
-footer .footer-main aside div a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-}
+        & a {
+          color: var(--primary-color);
+          text-decoration: none;
+          font-size: 1.5rem;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
 
-footer .footer-main aside div a i {
-  color: var(--primary-color) !important;
-  font-size: 1rem;
-  font-weight: 300;
-}
+          & i {
+            color: var(--primary-color) !important;
+            font-size: 1rem;
+            font-weight: 300;
+          }
+        }
 
-footer .footer-main aside div p {
-  text-decoration: none;
-  font-size: 1.2rem;
-  margin: 1rem 0 0 0;
-}
+        & p {
+          text-decoration: none;
+          font-size: 1.2rem;
+          margin: 1rem 0 0 0;
+        }
+      }
+    }
+  }
 
-footer hr {
-  width: 80%;
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid var(--primary-color);
-  margin: 4rem 0;
-}
+  & hr {
+    width: 80%;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--primary-color);
+    margin: 4rem 0;
+  }
 
-footer aside {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-}
+  & aside {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
 
-footer aside div.eternalbass-instagram {
-  background-color: var(--backdrop-color);
-  border-radius: 4rem;
-  border: 2px solid var(--primary-color);
-  padding: .5rem 1.5rem;  
-  display: flex;
-  align-items: center;
-}
+    & div.eternalbass-instagram {
+      background-color: var(--backdrop-color);
+      border-radius: 4rem;
+      border: 2px solid var(--primary-color);
+      padding: .5rem 1.5rem;
+      display: flex;
+      align-items: center;
 
-footer aside div.eternalbass-instagram i {
-  font-size: 2.5rem;
-  color: var(--text-color);
-  font-weight: 500;
-  margin-right: .5rem;
-}
+      & i {
+        font-size: 2.5rem;
+        color: var(--text-color);
+        font-weight: 500;
+        margin-right: .5rem;
+      }
 
-footer aside div.eternalbass-instagram a {
-  font-size: 1rem;
-  cursor: pointer;
-  color: var(--text-color);
-  font-weight: 500;
-  text-decoration: none;
-}
+      & a {
+        font-size: 1rem;
+        cursor: pointer;
+        color: var(--text-color);
+        font-weight: 500;
+        text-decoration: none;
+      }
+    }
+  }
 
-footer p {
-  color: var(--text-color);
-  font-size: 1.5rem;
-  font-weight: 200;
-  margin: 3rem 0 2rem;
+  footer i {
+    color: var(--primary-color) !important;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  & p {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin: 3rem 0 2rem;
+  }
 }
 
 /* -- Footer Desktop breakpoints -- */
@@ -525,22 +493,22 @@ footer p {
 @media only screen and (max-width: 1600px) {
   footer .footer-main {
     width: 80%;
-  }
-  
-  footer .footer-main img {
-    height: 6rem;
-  }
-  
-  footer .footer-main aside {
-    width: 70%;
-  }
 
-  footer .footer-main aside div a {
-    font-size: 1rem;
-  }
-  
-  footer .footer-main aside div p {
-    font-size: 1rem;
+    & img {
+      height: 6rem;
+    }
+
+    & aside {
+      width: 70%;
+
+      & div a {
+        font-size: 1rem;
+      }
+
+      & div p {
+        font-size: 1rem;
+      }
+    }
   }
 }
 
@@ -557,31 +525,31 @@ footer p {
     justify-content: space-between;
     align-items: center;
     width: 85%;
-  }
 
-  footer .footer-main > img {
-    height: auto;
-    width: 40%;
-    margin: 0 0 2rem 0;
-  }
+    & > img {
+      height: auto;
+      width: 40%;
+      margin: 0 0 2rem 0;
+    }
 
-  footer .footer-main aside {
-    justify-content: space-around;
-    width: 100%;
-  }
+    & aside {
+      justify-content: space-around;
+      width: 100%;
+    }
 
-  footer hr {
-    width: 85%;
-    margin: 4rem 0;
-  }
+    & hr {
+      width: 85%;
+      margin: 4rem 0;
+    }
 
-  footer aside {
-    width: 100%;
-  }
+    & aside {
+      width: 100%;
+    }
 
-  footer p {
-    font-size: 1rem;
-    margin: 2rem 0 1rem;
+    & p {
+      font-size: 1rem;
+      margin: 2rem 0 1rem;
+    }
   }
 }
 
@@ -590,10 +558,10 @@ footer p {
   footer .footer-main aside {
     flex-direction: column;
     align-items: center;
-  }
 
-  footer .footer-main aside div {
-    align-items: center;
+    & div {
+      align-items: center;
+    }
   }
 }
 
