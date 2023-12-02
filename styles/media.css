@@ -1,0 +1,409 @@
+/* -- Nav  breakpoints -- */
+@media only screen and (max-width: 1024px) {
+  nav {
+    border-radius: 0;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 0;
+    border-width: 0 0 2px 0;
+  }
+  
+  nav div a img {
+    height: 3rem;
+  }
+
+  div.nav-blur {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  nav {
+    bottom: 0;
+    border-width: 2px 0 0 0;
+  }
+
+  nav div a img {
+    height: 1.7rem;
+  }
+
+  nav div:nth-child(3) a img {
+    height: 2.5rem;
+  }
+
+  nav div:nth-child(3) {
+    align-self: center;
+  }
+
+  nav div span {
+    font-size: .9rem;
+    font-weight: 200;
+    opacity: 1;
+    width: 6rem;
+    height: 1.5rem;
+    border: 0;
+    position: static;
+  }
+  
+  nav div span::after {
+    content: none;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  nav {
+    padding-bottom: .5rem;
+  }
+
+  nav div a img {
+    height: 1.7rem;
+  }
+
+  nav div span {
+    font-size: .6rem;
+    font-weight: 200;
+    width: 4rem;
+    height: 1.5rem;
+  }
+}
+
+/* -- Main beakpoints -- */
+@media only screen and (max-width: 575px) {
+  main section {
+    width: 100% !important;
+    min-height: 100vh;
+    padding: 150px 0 0 0;
+  }
+  main section header {
+    padding: 0 10%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  main section header {
+    padding: 0 5%;
+  }
+  main section header img {
+    width: 10rem;
+    bottom: 1rem;
+    left: 4rem;
+  }  
+}
+
+
+/* -- Head section breakpoints -- */
+@media only screen and (min-width: 1920px) {
+  main section#head {
+    padding-top: 18rem;
+    & > div {  
+      & > div {  
+        & > img {
+          width: 1300px;
+        }
+      }
+  
+      & > p {
+        font-size: 2rem;
+      }
+  
+      & > div::before, div::after {
+        background-size: 1300px;
+      }
+      
+      & > div::before {
+        left: 6px;
+      }
+      
+      & > div::after {
+        left: -6px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  main section#head {
+    padding-top: 14rem;
+    & > div {  
+      & > div {  
+        & > img {
+          width: 600px;
+        }
+      }
+  
+      & > p {
+        font-size: 1rem;
+      }
+  
+      & > div::before, div::after {
+        background-size: 600px;
+      }
+      
+      & > div::before {
+        left: 4px;
+      }
+      
+      & > div::after {
+        left: -4px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 875px) {
+  main section#head {
+    padding-top: 16rem;
+    padding-bottom: 10rem;
+    & > div {  
+      & > div {  
+        & > img {
+          width: 400px;
+        }
+      }
+  
+      & > p {
+        font-size: 1rem;
+      }
+  
+      & > div::before, div::after {
+        background-size: 400px;
+      }
+      
+      & > div::before {
+        left: 3px;
+      }
+      
+      & > div::after {
+        left: -3px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  main section#head {
+    padding: 	0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > div {
+      & > div {  
+        & > img {
+          width: 300px;
+        }
+      }
+  
+      & > div::before, div::after {
+        background-size: 300px;
+      }
+
+      & > div::before {
+        left: 2px;
+      }
+      
+      & > div::after {
+        left: -2px;
+      }
+    }
+  }
+}
+
+
+/* -- Ticket section breakpoints -- */
+@media screen and (max-width: 675px) {
+  main section#line-up {
+    & > div {
+      & > div {
+        flex: 0 0 100px;
+      }
+    }
+  }
+}
+
+/* -- Ticket section breakpoints -- */
+@media only screen and (max-width: 1024px) {
+  main section#tickets {
+    & > header {
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  main section#tickets {
+    & > div.stars-container {
+      top: 20vh;
+    }
+  }
+}
+
+
+/* -- Team section breakpoints -- */
+@media only screen and (max-width: 1920px) {
+  main section#team {
+    grid-template-columns: repeat(2, 3fr);
+    grid-template-rows: repeat(3, 200px);
+    gap: 2rem;
+
+    & .member img {
+      margin: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  main section#team {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  main section#team {
+    width: 60%;
+    grid-template-columns: repeat(1, 3fr);
+    grid-template-rows: repeat(6, 200px);
+
+    & .member img {
+      margin: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  main section#team {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  main section#team {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  main section#team {
+    grid-template-rows: auto;
+
+    & .member {
+      border-left: none;
+      border-right: none;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 0;
+
+      & img {
+        height: auto;
+        width: 50%;
+        margin: 0 0 1.5rem 0;
+      }
+
+      & aside p {
+        text-align: center;
+        margin: 0 0 1rem 0;
+      }
+
+      & aside div {
+        justify-content: center;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+/* -- Footer breakpoints -- */
+@media only screen and (max-width: 2200px) {
+  footer .footer-main aside {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  footer .footer-main {
+    width: 80%;
+
+    & img {
+      height: 6rem;
+    }
+
+    & aside {
+      width: 70%;
+
+      & div a {
+        font-size: 1rem;
+      }
+
+      & div p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  section:last-child {
+    padding-bottom: 100px;
+    width: 50%;
+  }
+
+  footer .footer-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+
+    & > img {
+      height: auto;
+      width: 40%;
+      margin: 0 0 2rem 0;
+    }
+
+    & aside {
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    & hr {
+      width: 85%;
+      margin: 4rem 0;
+    }
+
+    & aside {
+      width: 100%;
+    }
+
+    & p {
+      font-size: 1rem;
+      margin: 2rem 0 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  footer .footer-main aside {
+    flex-direction: column;
+    align-items: center;
+
+    & div {
+      align-items: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  section:last-child {
+    padding-bottom: 0px;
+  }
+
+  footer {
+    margin: 10rem 0 7rem 0;
+  }
+
+  footer p {
+    font-weight: 100;
+    margin: 2rem 0 0rem;
+  }
+}

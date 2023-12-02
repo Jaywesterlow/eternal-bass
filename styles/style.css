@@ -6,7 +6,8 @@ main {
 
 main section {
   width: 80%;
-  padding: 130px 0 250px 0
+  padding: 5rem 0;
+  height: auto;
 }
 
 main section header h2 {
@@ -20,28 +21,6 @@ main section header img {
   bottom: 2rem;
   z-index: -1;
 }
-
-@media only screen and (max-width: 575px) {
-  main section {
-    width: 100% !important;
-    padding: 150px 0 0 0;
-  }
-  main section header {
-    padding: 0 10%;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  main section header {
-    padding: 0 5%;
-  }
-  main section header img {
-    width: 10rem;
-    bottom: 1rem;
-    left: 4rem;
-  }  
-}
-
 
 nav {
   background-color: var(--backdrop-color);
@@ -123,105 +102,119 @@ div.nav-blur {
   filter: blur(10px);
   z-index: 1;
 }
- 
 
-/* -- Nav  tablet breakpoint -- */
-@media only screen and (max-width: 1024px) {
-  nav {
-    border-radius: 0;
-    box-sizing: border-box;
-    width: 100%;
-    margin-top: 0;
-    border-width: 0 0 2px 0;
-  }
-  
-  nav div a img {
-    height: 3rem;
-  }
+main section#head {
+  padding-top: 14rem;
 
-  div.nav-blur {
-    display: none;
-  }
+  & > div {
+		position: relative;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+
+		& > div {
+			margin-bottom: 1rem;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			animation: glitch 5s 5s infinite;
+
+			& > img {
+				width: 600px;
+			}
+		}
+
+		& > p {
+			color: #fff;
+			text-transform: uppercase;
+      font-size: 1.5rem;
+      font-weight: 300;
+			letter-spacing: 1em;
+			text-align: center;
+			position: relative;
+			margin-top: 2rem;
+			animation: text-glitch 5s 5.02s infinite;
+		}
+
+		& > div::before, div::after {
+			content: "";
+			height: 100%;
+			width: 100%;
+			background-image: url(../assets/images/logo-hue.png);
+			background-size: 600px;
+			background-repeat:no-repeat;
+      background-position: center; 
+			position: absolute;
+		}
+
+		& > div::before {
+			filter: hue-rotate(100deg);
+			z-index: -2;
+			left: 3px;
+			animation: noise-before 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+		}
+
+		& > div::after {
+			filter: hue-rotate(200deg);
+			z-index: -1;
+			left: -3px;
+			animation: noise-after 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+		}
+	}
 }
-
-@media only screen and (max-width: 575px) {
-  nav {
-    bottom: 0;
-    border-width: 2px 0 0 0;
-  }
-
-  nav div a img {
-    height: 1.7rem;
-  }
-
-  nav div:nth-child(3) a img {
-    height: 2.5rem;
-  }
-
-  nav div:nth-child(3) {
-    align-self: center;
-  }
-
-  nav div span {
-    font-size: .9rem;
-    font-weight: 200;
-    opacity: 1;
-    width: 6rem;
-    height: 1.5rem;
-    border: 0;
-    position: static;
-  }
-  
-  nav div span::after {
-    content: none;
-  }
-}
-
-@media only screen and (max-width: 475px) {
-  nav {
-    padding-bottom: .5rem;
-  }
-
-  nav div a img {
-    height: 1.7rem;
-  }
-
-  nav div span {
-    font-size: .6rem;
-    font-weight: 200;
-    width: 4rem;
-    height: 1.5rem;
-  }
-}
-
 
 main section#line-up header {
   margin-bottom: 3rem;
 }
 
 
+main section#line-up  {
+  & > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    gap: 10px;
 
-main section#line-up > img {
-  height: 130px;
-  position: absolute;
-  display: none;
-}
+    & > div {
+      flex: 0 0 120px;
+      border-radius: 0.5rem;
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+      box-shadow: 1px 5px 15px #f1e90010;
+      position: relative;
+      overflow: hidden;
+    }
 
-main section#line-up > img#ticket-1 {
-  
-}
+    & > div:nth-of-type(1) {
+      background: url(../assets/images/artists/omnya-post.png.png) no-repeat 50% / cover;
+    }
+    & > div:nth-of-type(2) {
+      background: url(../assets/images/artists/collusion_revelation-post.png) no-repeat 50% /
+        cover;
+    }
+    & > div:nth-of-type(3) {
+      background: url(../assets/images/artists/infliction_unload-post.png) no-repeat 50% /
+        cover;
+    }
+    & > div:nth-of-type(4) {
+      background: url(../assets/images/artists/vasto-post.png) no-repeat 50% / cover;
+    }
 
-main section#line-up > img#ticket-2 {
-  
-}
-
-main section#line-up > img#ticket-3 {
-  
+    & > div:hover {
+      flex: 0 0 250px;
+      box-shadow: 1px 3px 15px #f1e9006e;
+      transform: translatey(-30px);
+    }
+  }
 }
 
 main section#tickets {
   position: relative;
-  height: 100vh;
 
   & .stars-container > img {
     position: absolute;
@@ -238,6 +231,7 @@ main section#tickets {
     color: #fff;
     text-decoration: none;
     padding: .6rem 2rem;
+    min-width: 152px;
     background-color: var(--backdrop-color);
     border: var(--primary-border);
     border-radius: 2rem;
@@ -303,79 +297,6 @@ main section#team {
   }
 }
 
-/* -- Team section tablet breakpoints -- */
-@media only screen and (max-width: 1920px) {
-  main section#team {
-    grid-template-columns: repeat(2, 3fr);
-    grid-template-rows: repeat(3, 200px);
-    gap: 2rem;
-
-    & .member img {
-      margin: none;
-    }
-  }
-}
-
-@media only screen and (max-width: 1440px) {
-  main section#team {
-    width: 90%;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  main section#team {
-    width: 60%;
-    grid-template-columns: repeat(1, 3fr);
-    grid-template-rows: repeat(6, 200px);
-
-    & .member img {
-      margin: none;
-    }
-  }
-}
-
-/* -- Team section mobile breakpoints -- */
-@media only screen and (max-width: 750px) {
-  main section#team {
-    width: 70%;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  main section#team {
-    width: 80%;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  main section#team {
-    grid-template-rows: auto;
-
-    & .member {
-      border-left: none;
-      border-right: none;
-      flex-direction: column;
-      justify-content: center;
-
-      & img {
-        height: auto;
-        width: 50%;
-        margin: 0 0 1.5rem 0;
-      }
-
-      & aside p {
-        text-align: center;
-        margin: 0 0 1rem 0;
-      }
-
-      & aside div {
-        justify-content: center;
-        margin: 0;
-      }
-    }
-  }
-}
-
 
 footer {
   display: flex;
@@ -422,6 +343,7 @@ footer {
         }
 
         & p {
+          color: var(--text-color);
           text-decoration: none;
           font-size: 1.2rem;
           margin: 1rem 0 0 0;
@@ -480,102 +402,5 @@ footer {
     font-size: 1.5rem;
     font-weight: 200;
     margin: 3rem 0 2rem;
-  }
-}
-
-/* -- Footer Desktop breakpoints -- */
-@media only screen and (max-width: 2200px) {
-  footer .footer-main aside {
-    width: 70%;
-  }
-}
-
-@media only screen and (max-width: 1600px) {
-  footer .footer-main {
-    width: 80%;
-
-    & img {
-      height: 6rem;
-    }
-
-    & aside {
-      width: 70%;
-
-      & div a {
-        font-size: 1rem;
-      }
-
-      & div p {
-        font-size: 1rem;
-      }
-    }
-  }
-}
-
-/* -- Footer tablet breakpoints -- */
-@media only screen and (max-width: 1024px) {
-  section:last-child {
-    padding-bottom: 100px;
-    width: 50%;
-  }
-
-  footer .footer-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 85%;
-
-    & > img {
-      height: auto;
-      width: 40%;
-      margin: 0 0 2rem 0;
-    }
-
-    & aside {
-      justify-content: space-around;
-      width: 100%;
-    }
-
-    & hr {
-      width: 85%;
-      margin: 4rem 0;
-    }
-
-    & aside {
-      width: 100%;
-    }
-
-    & p {
-      font-size: 1rem;
-      margin: 2rem 0 1rem;
-    }
-  }
-}
-
-/* -- Footer mobile breakpoints -- */
-@media only screen and (max-width: 675px) {
-  footer .footer-main aside {
-    flex-direction: column;
-    align-items: center;
-
-    & div {
-      align-items: center;
-    }
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  section:last-child {
-    padding-bottom: 0px;
-  }
-
-  footer {
-    margin: 10rem 0 7rem 0;
-  }
-
-  footer p {
-    font-weight: 100;
-    margin: 2rem 0 0rem;
   }
 }
