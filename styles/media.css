@@ -94,11 +94,11 @@
 /* -- Head section breakpoints -- */
 @media only screen and (min-width: 1920px) {
   main section#head {
-    padding-top: 18rem;
+    padding-top: 14rem;
     & > div {  
       & > div {  
         & > img {
-          width: 1300px;
+          width: 1000px;
         }
       }
   
@@ -107,15 +107,15 @@
       }
   
       & > div::before, div::after {
-        background-size: 1300px;
+        background-size: 1000px;
       }
       
       & > div::before {
-        left: 6px;
+        left: 4px;
       }
       
       & > div::after {
-        left: -6px;
+        left: -4px;
       }
     }
   }
@@ -140,11 +140,11 @@
       }
       
       & > div::before {
-        left: 4px;
+        left: 3px;
       }
       
       & > div::after {
-        left: -4px;
+        left: -3px;
       }
     }
   }
@@ -210,7 +210,7 @@
 }
 
 
-/* -- Ticket section breakpoints -- */
+/* -- Line-up section breakpoints -- */
 @media screen and (max-width: 675px) {
   main section#line-up {
     & > div {
