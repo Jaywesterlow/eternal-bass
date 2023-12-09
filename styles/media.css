@@ -1,4 +1,40 @@
 /* -- Nav  breakpoints -- */
+@media only screen and (max-height: 649px) {
+  nav div span {
+    top: 17vh;
+  }
+}
+
+@media only screen and (min-height: 650px) {
+  nav div span {
+    top: 17vh;
+  }
+}
+
+@media only screen and (min-height: 750px) {
+  nav div span {
+    top: 14vh;
+  }
+}
+
+@media only screen and (min-height: 980px) {
+  nav div span {
+    top: 12vh;
+  }
+}
+
+@media only screen and (min-height: 1230px) {
+  nav div span {
+    top: 9vh;
+  }
+}
+
+@media only screen and (min-height: 1378px) {
+  nav div span {
+    top: 7vh;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   nav {
     border-radius: 0;
@@ -209,18 +245,6 @@
   }
 }
 
-
-/* -- Ticket section breakpoints -- */
-@media screen and (max-width: 675px) {
-  main section#line-up {
-    & > div {
-      & > div {
-        flex: 0 0 100px;
-      }
-    }
-  }
-}
-
 /* -- Ticket section breakpoints -- */
 @media only screen and (max-width: 1024px) {
   main section#tickets {
@@ -233,7 +257,7 @@
 @media only screen and (max-width: 575px) {
   main section#tickets {
     & > div.stars-container {
-      top: 20vh;
+      top: 3vh;
     }
   }
 }
