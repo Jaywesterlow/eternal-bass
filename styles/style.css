@@ -89,26 +89,6 @@ nav {
   }
 }
 
-nav div {
-}
-
-nav div a img {
-}
-
-
-nav div span {
-  
-}
-
-nav div:hover span {
-}
-
-nav div span:hover {
-}
-
-nav div span::after {
-}
-
 div.nav-blur {
   border-radius: 4rem;
   background-color: rgb(0, 0, 0, 0.9);
