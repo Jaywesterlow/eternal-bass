@@ -1,3 +1,14 @@
+@font-face {
+  font-family: blanka;
+  src: url(../assets/fonts/Blanka-Regular.otf);
+}
+
+@font-face {
+  font-family: outfit;
+  src: url(../assets/fonts/Outfit-VariableFont_wght.ttf);
+}
+
+
 *,
 *::before,
 *::after {
