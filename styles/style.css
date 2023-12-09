@@ -359,7 +359,7 @@ footer {
         height: 100%;
         max-width: 33%;
 
-        & a {
+        & > a {
           color: var(--primary-color);
           text-decoration: none;
           font-size: 1.5rem;
@@ -367,19 +367,52 @@ footer {
           display: flex;
           align-items: center;
           min-width: max-content;
+          display: inline-block;
 
           & i {
             color: var(--primary-color) !important;
             font-size: 1rem;
             font-weight: 300;
           }
-        }      
+        }
+        
+        & > a::after {
+          content: "";
+          width: 0px;
+          height: 1px;
+          display: block;
+          transition: .2s;
+          background: var(--primary-color);
+        }
+          
+        & > a:hover::after {
+          width: 100%;
+        }
 
         & p {
           color: var(--text-color);
           text-decoration: none;
           font-size: 1rem;
           margin: 1rem 0 0 0;
+
+          & > a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--primary-color);
+          }
+          
+          & > a::after {
+            content: "";
+            width: 0px;
+            height: 1px;
+            display: block;
+            transition: .2s;
+            background: var(--primary-color);
+          }
+            
+          & > a:hover::after {
+            width: 100%;
+          }
         }
       }
     }
