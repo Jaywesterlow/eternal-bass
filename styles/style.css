@@ -69,10 +69,6 @@ nav {
       align-items: center;
     }
 
-    & > span:hover {
-      opacity: 0;
-    }
-
     & > span::after {
       content: "";
       position: absolute;
@@ -84,8 +80,16 @@ nav {
     }
   }
 
-  & > div:hover span {
-    opacity: 1;
+  & > div:hover {
+
+    & > span {
+      opacity: 1;
+    }
+
+    & > span:hover {
+      opacity: 0;
+      cursor: default;
+    }
   }
 }
 
