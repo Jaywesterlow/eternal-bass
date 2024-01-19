@@ -41,26 +41,19 @@
     box-sizing: border-box;
     width: 100%;
     margin-top: 0;
-    border-width: 0 0 2px 0;
-  }
-  
-  nav div a img {
-    height: 3rem;
-  }
-
-  div.nav-blur {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 575px) {
-  nav {
     bottom: 0;
     border-width: 2px 0 0 0;
   }
 
   nav div a img {
     height: 1.7rem;
+  }
+  nav div a i {
+    font-size: 1.7rem;
+  }
+  
+  div.nav-blur {
+    display: none;
   }
 
   nav div:nth-child(3) a img {
@@ -358,10 +351,6 @@
       & div a {
         font-size: 1rem;
       }
-
-      & div p {
-        font-size: 1rem;
-      }
     }
   }
 }
@@ -395,14 +384,14 @@
       margin: 4rem 0;
     }
 
-    & aside {
-      width: 100%;
-    }
-
     & p {
-      font-size: 1rem;
+      font-size: 14px;
       margin: 2rem 0 1rem;
     }
+  }
+
+  #faqItem1, #faqItem2, #faqItem3, #faqItem4, .VVtilburg, .parking{
+    font-size: 14px !important;
   }
 }
 
@@ -413,6 +402,10 @@
 
     & div {
       align-items: center;
+
+      & p {
+        text-align: center;
+      }
     }
   }
 }

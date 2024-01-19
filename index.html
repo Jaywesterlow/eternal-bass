@@ -16,25 +16,27 @@
 </head>
 <body>
 
+  <a id="return-to-top" href="#head"><img src="assets/images/white-icons/arrow.png" class="nav-item" alt="link back to top of site"></a>
+
   <nav>
     <div>
       <a href="#line-up"><img src="assets/images/white-icons/lineup.png" class="nav-item" alt="link to 'line-up' section"></a>
       <span class="nav-tooltip">Line-up</span>
     </div>
     <div>
-      <a href="#tickets"><img src="assets/images/white-icons/tickets.png" class="nav-item" alt="link to 'tickets' section"></a>
-      <span class="nav-tooltip">Tickets</span>
+      <a href="#spotify"><i class='bx bxl-spotify'></i></a>
+      <span class="nav-tooltip">Spotify</span>
     </div>
     <div>
       <a href="#head"><img src="assets/images/logo-new.png" class="nav-item" alt="'Eternal Bass' logo"></a>
     </div>
     <div>
-      <a href="#team"><img src="assets/images/white-icons/team.png" class="nav-item" alt="link to 'team' section"></a>
-      <span class="nav-tooltip">Team</span>
+      <a href="#tickets"><img src="assets/images/white-icons/tickets.png" class="nav-item" alt="link to 'tickets' section"></a>
+      <span class="nav-tooltip">Tickets</span>
     </div>
     <div>
-      <a href="#head"><img src="assets/images/white-icons/arrow.png" class="nav-item" alt="link back to top of site"></a>
-      <span class="nav-tooltip">Return to top</span>
+      <a href="#team"><img src="assets/images/white-icons/team.png" class="nav-item" alt="link to 'team' section"></a>
+      <span class="nav-tooltip">Team</span>
     </div>
   </nav> 
   
@@ -79,6 +81,16 @@
         </div>
         <div class="swiper-pagination"></div>
       </div>
+    </section>
+
+    <section id="spotify">
+      <header>
+        <h2>Spotify</h2>
+        <img src="assets/images/wave.png" alt="team title background image">
+      </header>
+      <div>
+        <div id="embed-iframe"></div>
+      </div>      
     </section>
 
     <section id="tickets">
@@ -162,7 +174,7 @@
         <img src="assets/images/logo-new.png" alt="Eternal Bass Logo">
         <aside>
           <div>
-            <a href="#">FAQ<i class='bx bxs-chevron-right'></i></a>
+            <a>FAQ<i class='bx bxs-chevron-right'></i></a>
             <button id="faqItem1">Leeftijd</button>
             <p id="faqContent1">De toegangsleeftijd voor dit feest is 18+.</p>
             <button id="faqItem2">Openingstijden</button>
@@ -179,7 +191,7 @@
           </div>
           <div>
             <a href="https://www.google.com/maps/place/Parkeergarage+013+Tivoli/@51.5562126,5.0922074,16z/data=!4m15!1m8!3m7!1s0x47c6bfc92394e7b7:0x3da7de0ea507d8d8!2sTivoli,+Tilburg!3b1!8m2!3d51.5557597!4d5.0980573!16s%2Fg%2F1tfcmkff!3m5!1s0x47c6bfcc9354a7ff:0xe67b970ea6331820!8m2!3d51.5588074!4d5.092918!16s%2Fg%2F1vxfzcxv?entry=ttu" target="_blank">Parkeergelegenheden<i class='bx bxs-chevron-right'></i></a>
-            <p>Parkeergarage 013 Tivoli</p>
+            <p class="parking">Parkeergarage 013 Tivoli</p>
           </div>
         </aside>
       </div>
@@ -198,5 +210,6 @@
 
 </body>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js'></script>
+<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 <script src="scripts/script.js"></script>
 </html>

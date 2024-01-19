@@ -24,6 +24,17 @@ main {
   }
 }
 
+a#return-to-top {
+  position: fixed;
+  right: 5%;
+  top: 2rem;
+  z-index: 2;
+  & img {
+    width: 3rem;
+  }
+}
+
+
 
 nav {
   background-color: var(--backdrop-color);
@@ -45,9 +56,17 @@ nav {
     flex-direction: column;
     align-items: center;
     
-    & > a img {
-      height: 2.5rem;
-    }
+    & > a {
+      & img {
+        height: 2.5rem;
+      }
+
+      & i {
+        color: #c5c5c5;
+        font-size: 2.5rem;
+      }
+    } 
+    
 
     & > span {
       opacity: 0;
@@ -110,6 +129,7 @@ div.nav-blur {
 
 main section#head {
   padding-top: 14rem;
+  height: 100vh;
 
   & > div {
 		position: relative;
@@ -171,7 +191,6 @@ main section#head {
 		}
 	}
 }
-
 
 main section#line-up {
 
@@ -241,15 +260,27 @@ main section#line-up {
         background-color: var(--primary-color);
       }
     }
-    
+  }
+}
 
+main section#spotify {
 
+  & > header {
+    margin-bottom: 3rem;
+  }
+
+  & div {
+    height: 50vh;
   }
 }
 
 
 main section#tickets {
   position: relative;
+
+  & > header {
+    margin-bottom: 3rem;
+  }
 
   & .stars-container > img {
     position: absolute;
@@ -431,7 +462,6 @@ footer {
         & p {
           color: var(--text-color);
           text-decoration: none;
-          font-size: 1rem;
           margin: 1rem 0 0 0;
           font-size: 0;
           width: 300px;
@@ -440,9 +470,14 @@ footer {
         }
 
         & p.open {
-          font-size: 1rem;
+          font-size: 14px;
           opacity: 1;
           transition: all .3s ease-in-out;
+        }
+
+        & p.parking {
+         font-size: 1.25rem; 
+         opacity: 1;
         }
       }
     }

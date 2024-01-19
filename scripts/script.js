@@ -28,15 +28,6 @@ function toggleContent4() {
   faqItemContent4.classList.toggle('open')
 }
 
-
-
-
-
-
-
-
-
-
 var swiper = new Swiper(".swiper", {
   effect: "coverflow",
   grabCursor: true,
@@ -56,3 +47,12 @@ var swiper = new Swiper(".swiper", {
     clickable: true
   }
 });
+
+window.onSpotifyIframeApiReady = (IFrameAPI) => {
+  const element = document.getElementById('embed-iframe');
+  const options = {
+      uri: 'https://open.spotify.com/playlist/04ZyxYZCCPa0CXZhtylqnD?si=0611e95bd3f04b34&nd=1&dlsi=5320a4ed46e248fb'
+    };
+  const callback = (EmbedController) => {};
+  IFrameAPI.createController(element, options, callback);
+};
