@@ -179,6 +179,12 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  main section#head {
+    padding-top: 0rem;
+  }
+
+}
 @media screen and (max-width: 875px) {
   main section#head {
     padding-top: 16rem;
@@ -239,6 +245,7 @@
 }
 
 /* -- Ticket section breakpoints -- */
+
 @media only screen and (max-width: 1024px) {
   main section#tickets {
     & > header {
