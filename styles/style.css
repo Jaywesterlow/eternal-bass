@@ -252,6 +252,11 @@ main section#line-up {
         background: url("../assets/images/artists/sanctuary-post.jpg")
             no-repeat 50% 50% / cover;
       }
+      
+      & > .swiper-slide--eight {
+        background: url("../assets/images/artists/timo-post.jpg")
+            no-repeat 50% 50% / cover;
+      }
     }
     
     & > .swiper-pagination {
